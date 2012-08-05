@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="metaTestJava" default="all" >
+  <target name="build">
+    <javac srcdir="./src"
+           destdir="./bin"
+           includes="**/*.java"
+           debug="true" />
+  </target>
+  <target name="lib">
+    <jar basedir="./bin" 
+         update="false"
+         jarfile="../lib/metaTestJava.jar" />
+  </target>
+
+  <target name="all" depends="build,lib"/>
+</project>
+
