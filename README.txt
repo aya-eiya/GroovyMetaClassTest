@@ -3,10 +3,10 @@ This is Groovy's Test project for MetaClass
 cd ./test
 groovy TestAll.groovy
 
-When dynamic typing case.
-Message is shown only adding case.
+When the dynamic typing test case.
+Message is shown only adding test cases.
 
-When static typing case.
-Massage is shown all case.
+When the static typing test case.
+Massage is shown all test cases.
 
-Perhaps because of indeterminate type, JVM selects an other method from polymorphism in the method.
+Perhaps because of indeterminate type of the argument, JVM selects an other method from polymorphism in the method.
