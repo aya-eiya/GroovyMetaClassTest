@@ -11,14 +11,5 @@ MySubmit.metaClass.define {
       }
     })
   }
-  mySubmitEx = {Closure closure ->
-    println "${delegate} Class method changed."
-    return delegate.mySubmit (new Callable(){
-      @Override
-      Object call() {
-        return closure()
-      }
-    })
-  }
 }
 

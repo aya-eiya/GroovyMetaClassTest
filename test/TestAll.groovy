@@ -13,17 +13,18 @@ def test = { caseName,argType = "" ->
       def sp1=new SuperOne()
       def sb1=new SubOne()
       def sb2=new SubTwo()
+      def f={println it;it}
       try{
-        [sp1.mySubmit2 ({"${caseName}-Super1_2"} ${argType})
-        ,sb1.mySubmit2 ({"${caseName}-Sub1_2"} ${argType})
-        ,sb2.mySubmit2 ({"${caseName}-Sub2_2"} ${argType})]
+        [sp1.mySubmit2 ({f "${caseName}-Super1_2(${argType})"} ${argType})
+        ,sb1.mySubmit2 ({f "${caseName}-Sub1_2(${argType})"} ${argType})
+        ,sb2.mySubmit2 ({f "${caseName}-Sub2_2(${argType})"} ${argType})]
       }catch(Exception e){
-        [sp1.mySubmit ({"${caseName}-Super1"} ${argType})
-        ,sb1.mySubmit ({"${caseName}-Sub1"} ${argType})
-        ,sb2.mySubmit ({"${caseName}-Sub2"} ${argType})]
-        [sp1.mySubmitEx ({"${caseName}-Super1_Ex"} ${argType})
-        ,sb1.mySubmitEx ({"${caseName}-Sub1_Ex"} ${argType})
-        ,sb2.mySubmitEx ({"${caseName}-Sub2_Ex"} ${argType})]
+        [sp1.mySubmit ({f "${caseName}-Super1(${argType})"} ${argType})
+        ,sb1.mySubmit ({f "${caseName}-Sub1(${argType})"} ${argType})
+        ,sb2.mySubmit ({f "${caseName}-Sub2(${argType})"} ${argType})]
+        [sp1.mySubmitEx ({f "${caseName}-Super1_Ex(${argType})"} ${argType})
+        ,sb1.mySubmitEx ({f "${caseName}-Sub1_Ex(${argType})"} ${argType})
+        ,sb2.mySubmitEx ({f "${caseName}-Sub2_Ex(${argType})"} ${argType})]
       }
     """
   )
